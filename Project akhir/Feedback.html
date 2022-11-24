@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-+4j30LffJ4tgIMrq9CwHvn0NjEvmuDCOfk6Rpg2xg7zgOxWWtLtozDEEVvBPgHqE" crossorigin="anonymous" />
+  <title>Feedback</title>
+</head>
+
+<body onload="onPageLoad()">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><b>Gem BOT</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="about_us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="portofolio.html">Portofolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="Blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="BOT.html">BOT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="Feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+  </header>
+  <br>
+  <div class="text_todos">
+    <h2 style="text-align: center;"><b>FORM FEEDBACK</b></h2>
+    <p style="text-align: center;"><b>Isilah form dibawah ini sesuai kesan anda</b></p>
+  </div>
+  <div class="container">
+    <div class="todos">
+      <form name="formPendaftaran" onsubmit="return validateForm()">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Nama Lengkap:</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="fname" placeholder="Silahkan Masukan Nama Lengkap"
+              autocomplete="off"><br>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-25">
+            <label for="phone">Nomor Hp:</label><br>
+          </div>
+          <div class="col-75">
+            <input type="number" id="phone" name="phone" placeholder="Silahkan Masukan Nomor Hp"><br>
+          </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-25">
+            <label for="mobil" class="form-label">Asal sekolah</label><br>
+          </div>
+          <!--Bagian Mobil Yang Mau Dirubah-->
+          <div class="col-75">
+            <select id="Tingkatan" onchange="onChangeBrand()">
+              <option>-- Pilih tingkatan --</option>
+              <option>SD</option>
+              <option>SMP</option>
+              <option>SMA</option>
+              <option>SMK</option>
+            </select>
+            <select id="Kelas">
+              <option>-- Pilih kelas --</option>
+              <option>1 SD</option>
+              <option>2 SD</option>
+              <option>3 SD</option>
+              <option>4 SD</option>
+              <option>5 SD</option>
+              <option>6 SD</option>
+              <option>1 SMP</option>
+              <option>2 SMP</option>
+              <option>3 SMP</option>
+              <option>1 SMA</option>
+              <option>2 SMA</option>
+              <option>3 SMA</option>
+              <option>1 SMK</option>
+              <option>2 SMK</option>
+              <option>3 SMK</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="tglisifeedback">Tanggal Isi Feedback:</label><br>
+          </div>
+          <div class="col-75">
+            <input type="date" id="tglisifeedback" name="tglisifeedback"><br>
+          </div>
+        </div>
+
+        <!-- <div class="row">
+          <div class="col-25">
+            <label for="tglselesai">Tanggal Selesai:</label><br>
+          </div>
+          <div class="col-75">
+            <input type="date" id="tglselesai" name="tglselesai"><br>
+          </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-25">
+            <label for="feedback">Feedback:</label><br>
+          </div>
+          <div class="col-75">
+            <textarea name="message" id="feedback" rows="10" cols="30"
+              placeholder="Silahkan Masukan Saran Anda"></textarea>
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <input onclick="saveToLocalstorage()" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="footer_menu">
+            <h3><b>Gem BOT</b></h3>
+          </div>
+          <p>
+            Gem BOT adalah sebuah web chatbot yang akan memberikan informasi mengenai prodi
+            Teknik Informatika Universitas Malikussaleh
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <div class="footer_menu">
+            <h3><b>Menu</b></h3>
+          </div>
+          <div class="konten">
+            <p><a class="link_medsos" href="home.html">Home</a></p>
+            <p><a class="link_medsos" href="about_us.html">About Us</a></p>
+            <p><a class="link_medsos" href="portofolio.html">Portofolio</a></p>
+            <p><a class="link_medsos" href="Blog.html">Blog</a></p>
+            <p><a class="link_medsos" href="BOT.html">BOT</a></p>
+            <p><a class="link_medsos" href="Todos.html">Todos</a></p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="footer_menu">
+            <h3><b>Alamat</b></h3>
+          </div>
+          <p>
+            JL. Kampus Unimal Bukit Indah Blang Pulo, Kec. Muara Satu, Kabupaten Aceh Utara
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <div class="footer_menu">
+            <h3><b>Media Sosial</b></h3>
+          </div>
+          <div class="tabel_a">
+            <div class="tabel1">
+              <table>
+                <tr>
+                  <td>
+                    <div class="medsos">
+                      <img src="./gambar/medsos/instagram.png" alt="" width="30px" height="30px">
+                    </div>
+                  </td>
+                  <td>
+                    <p class="medsos2">
+                      <a class="link_medsos" href="https://www.instagram.com/teknikinformatika_unimal/"
+                        target="_blank">teknikinformatika_unimal</a>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="medsos">
+                      <img src="./gambar/medsos/email.png" alt="" width="30px" height="30px">
+                    </div>
+                  </td>
+                  <td>
+                    <p class="medsos2">
+                      <a class="link_medsos" href="http://mail.google.com/" target="_blank">informatika@unimal.ac.id</a>
+                    </p>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td>
+                    <div class="medsos">
+                      <img src="./gambar/medsos/telepon.png" alt="" width="30px" height="30px">
+                    </div>
+                  </td>
+                  <td>
+                    <p class="medsos2">
+                      <a class="link_medsos" href="tel:013-78320">221 472635239</a>
+                    </p>
+                  </td>
+                </tr> -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="gambar_footer">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/113.webp" alt="">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/111.webp" alt="">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/112.webp" alt="">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/114.webp" alt="">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/115.webp" alt="">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <img class="wisata" src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" alt="">
+          </div>
+        </div>
+      </div> -->
+    <br>
+    <div class="text-center p-4 bg-dark">
+      © 2022 Copyright:
+      <a class="text-reset fw-bold" href="#">Gem BOT</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+
+  <script>
+    const brands = ["Toyota", "Honda", "Mitsubishi", "Suzuki", "Daihatsu", "Isuzu"]
+    const models = [
+      { id: 1, brand: 'Toyota', model: '-- Pilih Mobil --' },
+      { id: 2, brand: 'Toyota', model: 'Yaris' },
+      { id: 3, brand: 'Toyota', model: 'Agya' },
+      { id: 4, brand: 'Toyota', model: 'Fortuner' },
+      { id: 5, brand: 'Toyota', model: 'Inova' },
+      { id: 6, brand: 'Toyota', model: 'Alphard' },
+      { id: 7, brand: 'Honda', model: '-- Pilih Mobil --' },
+      { id: 8, brand: 'Honda', model: 'Brio' },
+      { id: 9, brand: 'Honda', model: 'Jazz' },
+      { id: 10, brand: 'Honda', model: 'Wedding Car' },
+      { id: 11, brand: 'Mitsubishi', model: '-- Pilih Mobil --' },
+      { id: 12, brand: 'Mitsubishi', model: 'Pajero' },
+      { id: 13, brand: 'Suzuki', model: '-- Pilih Mobil --' },
+      { id: 14, brand: 'Suzuki', model: 'Ertiga' },
+      { id: 15, brand: 'Daihatsu', model: '-- Pilih Mobil --' },
+      { id: 16, brand: 'Daihatsu', model: 'Ayla' },
+      { id: 17, brand: 'Isuzu', model: '-- Pilih Mobil --' },
+      { id: 18, brand: 'Isuzu', model: 'Elf 20 seat' }
+    ]
+    function onPageLoad() {
+      brands.forEach(brand => {
+        const option = document.createElement("option");
+        option.text = brand;
+        option.value = brand;
+
+        document.getElementById("brands").appendChild(option)
+
+      })
+    }
+
+    function onChangeBrand() {
+      const selectedBrand = document.getElementById("brands").value;
+      const filteredModels = models.filter((model) => model.brand === selectedBrand)
+
+      document.getElementById("models").length = 0
+      filteredModels.forEach(obj_model => {
+        const model = document.createElement("option");
+        model.value = obj_model.model;
+        model.text = obj_model.model;
+
+        document.getElementById("models").appendChild(model)
+      })
+
+    }
+
+
+    function saveToLocalstorage() {
+      const fname = document.getElementById("fname").value ? document.getElementById("fname").value : "No Name"
+      const phone = document.getElementById("phone").value
+      const tglmulai = document.getElementById("tglmulai").value
+      const tglselesai = document.getElementById("tglselesai").value
+      const models = document.getElementById("models").value
+      const alamat = document.getElementById("alamat").value
+
+      localStorage.setItem("Nama Lengkap", fname)
+      localStorage.setItem("Nomor Hp", phone)
+      localStorage.setItem("Tanggal Mulai Penyewaan", tglmulai)
+      localStorage.setItem("Tanggal Selesai Penyewaan", tglselesai)
+      localStorage.setItem("Mobil ", models)
+      localStorage.setItem("Alamat", alamat)
+    }
+
+    function validateForm() {
+      if (document.forms["formPendaftaran"]["fname"].value == "") {
+        alert("Nama Tidak Boleh Kosong");
+        document.forms["formPendaftaran"]["fname"].focus();
+        return false;
+      }
+
+      if (document.forms["formPendaftaran"]["phone"].value == "") {
+        alert("Nomor Hp Tidak Boleh Kosong");
+        document.forms["formPendaftaran"]["phone"].focus();
+        return false;
+      }
+
+      if (document.forms["formPendaftaran"]["tglmulai"].value == "") {
+        alert("Silahkan Masukan Tanggal Mulai Sewa");
+        document.forms["formPendaftaran"]["tglmulai"].focus();
+        return false;
+      }
+
+      if (document.forms["formPendaftaran"]["tglselesai"].value == "") {
+        alert("Silahkan Masukan Tanggal Selesai Sewa");
+        document.forms["formPendaftaran"]["tglselesai"].focus();
+        return false;
+      }
+
+      if (document.forms["formPendaftaran"]["models"].selectedIndex < 1) {
+        alert("Silahkan Pilih Mobil Terlebih Dahulu");
+        document.forms["formPendaftaran"]["models"].focus();
+        return false;
+      }
+
+      if (document.forms["formPendaftaran"]["alamat"].value == "") {
+        alert("Nomor Hp Boleh Kosong");
+        document.forms["formPendaftaran"]["alamat"].focus();
+        return false;
+      }
+    }
+
+  </script>
+</body>
+
+</html>
