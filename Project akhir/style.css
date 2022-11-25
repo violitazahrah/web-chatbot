@@ -19,6 +19,11 @@
     margin-top: 140px;
     margin-bottom: 140px;
 }
+
+#card-visi {
+    max-width: 540px;
+}
+
 .card_unggul{
     text-align: center;
     padding: 10px;
@@ -303,10 +308,3 @@ h5{
       margin-top: 0;
     }
   }
-
-  /* wrapper */
-.wrapper{
-    display: flex;
-    align-items: center;
-
-}
